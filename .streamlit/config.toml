@@ -1,0 +1,13 @@
+# .streamlit/config.toml
+
+[theme]
+base = "dark"  # or "light" if you prefer
+
+[server]
+headless = true
+
+[ui]
+hide_sidebar_nav = false
+
+[pages]
+show_home_in_sidebar = false
