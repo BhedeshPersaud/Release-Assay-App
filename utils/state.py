@@ -5,9 +5,9 @@ import os
 def ensure_state_keys(keys):
     for key in keys:
         if key == "stored_gel_data":
-            st.write("🔁 Checking for stored_gel_data.pkl")
-            file_path = os.path.join(os.getcwd(), "stored_gel_data.pkl")
-            st.write(f"Looking at: {file_path}")
+            #st.write("🔁 Checking for stored_gel_data.pkl")
+            #file_path = os.path.join(os.getcwd(), "stored_gel_data.pkl")
+            #st.write(f"Looking at: {file_path}")
             if os.path.exists(file_path):
                 st.write("📂 Found stored_gel_data.pkl, loading...")
                 try:
