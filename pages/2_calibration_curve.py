@@ -169,3 +169,7 @@ def render():
     # ------------------ Show equation ------------------------
     st.success(f"Absorbance = {slope:.4f} x Conc.+ {intercept:.4f}")
 
+    return
+
+render()
+
