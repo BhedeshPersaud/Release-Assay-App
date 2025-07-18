@@ -15,5 +15,5 @@ st.set_page_config(
 ensure_state_keys(["stored_gel_data"])
 
 # ------------------- Render welcome page for user ------------------------
-import pages._1_welcome.py
+import pages._1_welcome
 
