@@ -5,7 +5,7 @@ import streamlit as st
 # ------Constants / Default Values --------------
 
 # Covers rows 26 to 33, and columns C to N
-default_row_range = (25, 34)
+default_row_range = (25, 33)
 default_col_range = (2, 14)
 
 # ------Load the Data ----------------------------
@@ -37,15 +37,15 @@ def read_absorbance_matrix(
         A ValueError if the extracted DataFrame is not 8x12
     """
     # Convert the entire uploaded file into a DataFrame
-    plate_reader_df = pd.read_excel(uploaded_file, engine="openpyxl")
+    plate_reader_df = pd.read_excel(uploaded_file, header=None, engine="openpyxl")
 
     # From the DataFrame above, extract the section of data containing all
     # the absorbance values for the wells
     absorbance_matrix = plate_reader_df.iloc[row_range[0]:row_range[1], col_range[0]:col_range[1]].copy()
 
     # Check whether the extracted absorbance matrix is 8x12
-    #if absorbance_matrix.shape != (8, 12):
-        # raise ValueError(f"Expected 8x12 data block, but got {absorbance_matrix.shape}")
+    if absorbance_matrix.shape != (8, 12):
+        raise ValueError(f"Expected 8x12 data block, but got {absorbance_matrix.shape}")
 
     # Label the rows of the extracted absorbance_matrix as A-H, and label the columns as 1-12
     absorbance_matrix.index = [chr(ord("A") + i) for i in range(8)]
