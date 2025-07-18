@@ -5,7 +5,7 @@ import streamlit as st
 # ------Constants / Default Values --------------
 
 # Covers rows 26 to 33, and columns C to N
-default_row_range = (25, 33)
+default_row_range = (25, 34)
 default_col_range = (2, 14)
 
 # ------Load the Data ----------------------------
