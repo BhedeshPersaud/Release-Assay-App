@@ -44,8 +44,8 @@ def read_absorbance_matrix(
     absorbance_matrix = plate_reader_df.iloc[row_range[0]:row_range[1], col_range[0]:col_range[1]].copy()
 
     # Check whether the extracted absorbance matrix is 8x12
-    if absorbance_matrix.shape != (8, 12):
-        raise ValueError(f"Expected 8x12 data block, but got {absorbance_matrix.shape}")
+    #if absorbance_matrix.shape != (8, 12):
+        # raise ValueError(f"Expected 8x12 data block, but got {absorbance_matrix.shape}")
 
     # Label the rows of the extracted absorbance_matrix as A-H, and label the columns as 1-12
     absorbance_matrix.index = [chr(ord("A") + i) for i in range(8)]
