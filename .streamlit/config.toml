@@ -12,7 +12,7 @@ font                      = "sans serif"
 headless = true
 
 [ui]
-hide_sidebar_nav = false
+hide_sidebar_nav = true
 
 [pages]
 show_home_in_sidebar = false
