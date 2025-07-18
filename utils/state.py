@@ -32,7 +32,7 @@ def ensure_state_keys(state_keys):
             load_stored_gel_data()
         else:
             if key not in st.session_state:
-                st.session_state[key] = {}
+                st.session_state[key] = None
     return
 
 
