@@ -86,8 +86,8 @@ def render():
                 key=f"conc_{selected_well}"
             )
 
-            # Submit button for the form
-            submit_form = st.form_submit_button("Generate Calibration Curve 📈")
+        # Submit button for the form
+        submit_form = st.form_submit_button("Generate Calibration Curve 📈")
 
     # Exit the loop if form is not submitted yet
     if not submit_form:
@@ -103,11 +103,11 @@ def render():
     for selected_well, selected_well_calibration_conc in calibration_well_concentrations.items():
 
         # Obtain row and column place of well from the well name
-        well_row, well_column = selected_well[0], selected_well[1:]
+        well_row, well_column = selected_well[0], int(selected_well[1:])
 
         # Use the row and column information to obtain the absorbance value from the
         # absorbance dataframe
-        selected_well_absorbance = absorbance_matrix.at(well_row, well_column)
+        selected_well_absorbance = absorbance_matrix.at[well_row, well_column]
 
         # Skip wells without any valid absorbance
         if pd.isna(selected_well_absorbance):
@@ -115,8 +115,8 @@ def render():
 
         # For selected wells, add the concentration and absorbance key-value pairs
         # to the calibration_curve_data list
-        calibration_curve_data.append({"Concentration: ": selected_well_calibration_conc,
-                                      "Absorbance: ": float(selected_well_absorbance)
+        calibration_curve_data.append({"Concentration": selected_well_calibration_conc,
+                                      "Absorbance": float(selected_well_absorbance)
                                        })
 
     # Build calibration dataframe from the list of dictionaries

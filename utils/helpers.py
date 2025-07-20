@@ -80,7 +80,7 @@ def generate_well_plate_buttons(
         absorbance_matrix: pd.DataFrame,
         key_prefix: str,
         empty_label: str = "",
-        fmt: str = "{:.2f}"
+        fmt: str = "{:.3f}"
         ):
     """
 
